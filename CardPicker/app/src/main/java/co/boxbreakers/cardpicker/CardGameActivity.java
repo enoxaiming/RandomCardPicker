@@ -1,15 +1,10 @@
 package co.boxbreakers.cardpicker;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.Handler;
 import android.provider.MediaStore;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -17,7 +12,7 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity {
+public class CardGameActivity extends AppCompatActivity {
 
     private ImageView mImageView;
     private Bitmap currentBitmap = null;
@@ -25,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_card_game);
         mImageView = (ImageView) findViewById(R.id.imageView);
         String[] projection = new String[]{
                 MediaStore.Images.Media.DATA,
