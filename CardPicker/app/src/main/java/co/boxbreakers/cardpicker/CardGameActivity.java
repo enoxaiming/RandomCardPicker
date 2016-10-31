@@ -3,6 +3,7 @@ package co.boxbreakers.cardpicker;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
@@ -21,7 +22,8 @@ public class CardGameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_game);
-        mImageView = (ImageView) findViewById(R.id.imageView);
+        mImageView = (ImageView) findViewById(R.id.imageView2);
+        ImageView imageView = (ImageView) findViewById(R.id.imageView3);
         String[] projection = new String[]{
                 MediaStore.Images.Media.DATA,
         };
@@ -51,5 +53,11 @@ public class CardGameActivity extends AppCompatActivity {
             currentBitmap.recycle();
         currentBitmap = BitmapFactory.decodeFile(path);
         mImageView.setImageBitmap(currentBitmap);
+        final Random random1 = new Random();
+        final int count1 = imagesPath.size();
+        int number1 = random1.nextInt(count1);
+        String path1 = imagesPath.get(number1);
+        currentBitmap = BitmapFactory.decodeFile(path1);
+        imageView.setImageBitmap(currentBitmap);
     }
 }

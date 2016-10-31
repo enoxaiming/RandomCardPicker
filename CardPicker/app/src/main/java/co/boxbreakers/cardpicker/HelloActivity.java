@@ -1,54 +1,63 @@
 package co.boxbreakers.cardpicker;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 public class HelloActivity extends AppCompatActivity {
-
-    private final int PERMISSION_REQUEST_CONTACT = 222;
-    private Activity activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hello);
-        activity = this;
-
-        Button btn = (Button) findViewById(R.id.button);
-        btn.setOnClickListener(new View.OnClickListener() {
+        getSupportActionBar().hide();
+        putBitmap(R.id.background_image,R.drawable.intro,10);
+        RelativeLayout relativeLayout = (RelativeLayout)findViewById(R.id.activity_hello);
+        relativeLayout.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
+            public boolean onTouch(View v, MotionEvent event) {
                 startActivity(new Intent(HelloActivity.this,MainActivity.class));
+                finish();
+                return false;
             }
         });
-}
+
+    }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case PERMISSION_REQUEST_CONTACT: {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    startActivity(new Intent(HelloActivity.this,MainActivity.class));
-                    // permission was granted, yay! Do the
-                    // contacts-related task you need to do.
+    protected void onDestroy() {
+        recycleView(R.id.background_image);
+        super.onDestroy();
+    }
 
-                } else {
-                    // permission denied, boo! Disable the
-                    // functionality that depends on this permission.
-                }
-                return;
-            }
+    private void recycleView(int id) {
+        ImageView view = (ImageView)findViewById(id);
 
-            // other 'case' lines to check for other
-            // permissions this app might request
+        Drawable d = view.getDrawable();
+        if(d instanceof BitmapDrawable) {
+            Bitmap b = ((BitmapDrawable) d).getBitmap();
+            view.setImageBitmap(null);
+            b.recycle();
+            b = null;
         }
+        d.setCallback(null);
+        System.gc();
+        Runtime.getRuntime().gc();
+    }
+
+    private void putBitmap(int imageViewId, int drawableId, int scale) {
+        ImageView imageView = (ImageView)findViewById(imageViewId);
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inSampleSize = scale;
+        imageView.setImageBitmap(BitmapFactory.decodeResource(getResources(), drawableId));
     }
 }

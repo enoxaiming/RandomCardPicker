@@ -12,12 +12,79 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="co.boxbreakers.cardpicker.MainActivity">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:srcCompat="@android:color/background_light"
-        android:id="@+id/imageView"
-        android:layout_below="@+id/textView"
+    <ViewFlipper
+        android:id="@+id/viewFlipper1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:addStatesFromChildren="true"
+        android:layout_centerInParent="true">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:color/background_light"
+            android:id="@+id/back1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:color/background_light"
+            android:id="@+id/imageView1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp" />
+    </ViewFlipper>
+
+    <ViewFlipper
+        android:id="@+id/viewFlipper2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:addStatesFromChildren="true"
+        android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp" />
+        android:layout_marginLeft="10dp"
+        android:layout_toStartOf="@id/viewFlipper1">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:color/background_light"
+            android:id="@+id/back2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:color/background_light"
+            android:id="@+id/imageView2" />
+    </ViewFlipper>
+
+    <ViewFlipper
+        android:id="@+id/viewFlipper3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:addStatesFromChildren="true"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toStartOf="@id/viewFlipper2">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:color/background_light"
+            android:id="@+id/back3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:color/background_light"
+            android:id="@+id/imageView3" />
+    </ViewFlipper>
+
 </RelativeLayout>
