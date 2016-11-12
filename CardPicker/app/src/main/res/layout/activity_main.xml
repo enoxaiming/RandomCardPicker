@@ -14,12 +14,11 @@
 
     <ViewFlipper
         android:id="@+id/viewFlipper1"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:gravity="center"
-        android:layout_gravity="center"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:addStatesFromChildren="true"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="false"
+        android:layout_marginLeft="20dp">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -29,8 +28,8 @@
             android:layout_marginTop="26dp" />
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             app:srcCompat="@android:color/background_light"
             android:id="@+id/imageView1"
             android:layout_centerHorizontal="true"
@@ -39,15 +38,14 @@
 
     <ViewFlipper
         android:id="@+id/viewFlipper2"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:gravity="center"
         android:layout_gravity="center"
         android:addStatesFromChildren="true"
-        android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="10dp"
-        android:layout_toStartOf="@id/viewFlipper1">
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/viewFlipper1"
+        android:layout_marginStart="80dp">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -56,23 +54,18 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="26dp" />
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             app:srcCompat="@android:color/background_light"
             android:id="@+id/imageView2" />
     </ViewFlipper>
 
     <ViewFlipper
         android:id="@+id/viewFlipper3"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:addStatesFromChildren="true"
-        android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="10dp"
-        android:layout_toStartOf="@id/viewFlipper2">
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/viewFlipper1"
+        android:layout_marginLeft="20dp">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -81,10 +74,113 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="26dp" />
         <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:srcCompat="@android:color/background_light"
+            android:id="@+id/imageView3" />
+    </ViewFlipper>
+
+    <ViewFlipper
+        android:id="@+id/viewFlipper4"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/viewFlipper2"
+        android:layout_toEndOf="@+id/viewFlipper1"
+        android:layout_marginStart="80dp">
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:srcCompat="@android:color/background_light"
-            android:id="@+id/imageView3" />
+            android:id="@+id/back4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp" />
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:srcCompat="@android:color/background_light"
+            android:id="@+id/imageView4" />
+    </ViewFlipper>
+
+    <ViewFlipper
+        android:id="@+id/viewFlipper5"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/viewFlipper3"
+        android:layout_marginLeft="20dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:color/background_light"
+            android:id="@+id/back5"
+            android:layout_marginTop="26dp" />
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:srcCompat="@android:color/background_light"
+            android:id="@+id/imageView5" />
+    </ViewFlipper>
+
+    <ViewFlipper
+        android:id="@+id/viewFlipper6"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/viewFlipper4"
+        android:layout_toEndOf="@+id/viewFlipper1"
+        android:layout_marginStart="80dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:color/background_light"
+            android:id="@+id/back6"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp" />
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:srcCompat="@android:color/background_light"
+            android:id="@+id/imageView6" />
+    </ViewFlipper>
+
+    <ViewFlipper
+        android:id="@+id/viewFlipper7"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/viewFlipper5"
+        android:layout_marginLeft="20dp"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:color/background_light"
+            android:id="@+id/back7"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp" />
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:srcCompat="@android:color/background_light"
+            android:id="@+id/imageView7" />
+    </ViewFlipper>
+
+    <ViewFlipper
+        android:id="@+id/viewFlipper8"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/viewFlipper6"
+        android:layout_toEndOf="@+id/viewFlipper1"
+        android:layout_marginStart="80dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:color/background_light"
+            android:id="@+id/back8"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp" />
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:srcCompat="@android:color/background_light"
+            android:id="@+id/imageView8" />
     </ViewFlipper>
 
 </RelativeLayout>
